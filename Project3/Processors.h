@@ -5,7 +5,10 @@
 class Processors :
 	public IProcessor
 {
+
+
 public:
+	void dubleCheck();
 	Processors();
 	~Processors();
 };

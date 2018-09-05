@@ -4,28 +4,32 @@
 using namespace std;
 
 void FileRW::fileRead()
-
-
 {
-	
-	ifstream fileIn ("C:\\example.txt");
+	ifstream fileIn ("example.txt");
 
-	if (!fileIn.is_open())
-		cout << "No File!" << endl;
-	else {
-		fileIn.getline(temp, 10000);
-		fileIn.close();
-		cout << temp << endl;
-
+	while (true)
+	{
+		char v;
+		fileIn >> v;
+		if (!fileIn.eof())
+			cout << v << endl;
+		else
+			break;
 	}
 }
 
-
 void FileRW::fileWright()
 {
+	ofstream fileOut ("example_out.txt");
+
+	while (true)
+	{
+		char c;
+		fileOut << c << endl;
+
+	}
+
 }
-
-
 
 FileRW::FileRW()
 {

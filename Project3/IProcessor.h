@@ -3,9 +3,7 @@
 
 class IProcessor
 {
-	public:
-	virtual ~IProcessor (){}
 
-	virtual void processingData();
- 
+public:
+
 };
