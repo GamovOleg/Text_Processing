@@ -1,10 +1,17 @@
 #include "Factory.h"
+#include "IProcessor.h"
 
-Factory::Factory()
+IProcessor *IProcessor::chooseArg(char choice)
 {
+	if (choice == 'A')
+		return new processorA;
+	else if (choice == 'B')
+		return new processorB;
+	else
+		return new processorC;
 }
 
-
-Factory::~Factory()
+IProcessor * Factory::chooseArg()
 {
+	return nullptr;
 }

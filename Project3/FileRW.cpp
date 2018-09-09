@@ -1,34 +1,22 @@
 #include "FileRW.h"
-#include <fstream> 
 #include <iostream>
+#include <fstream>
+
 using namespace std;
 
-void FileRW::fileRead()
+void FileRW::reader()
 {
-	ifstream fileIn ("example.txt");
-
-	while (true)
-	{
-		char v;
-		fileIn >> v;
-		if (!fileIn.eof())
-			cout << v << endl;
-		else
-			break;
+	infile.open("example.txt");
+	while (!infile.is_open()) {
+		cerr << "File not found!" << endl;
 	}
 }
 
-void FileRW::fileWright()
+void FileRW::writer()
 {
-	ofstream fileOut ("example_out.txt");
-
-	while (true)
-	{
-		char c;
-		fileOut << c << endl;
-
-	}
-
+	ofstream outfile;
+	outfile.open("example_out.txt");
+	outfile.close();
 }
 
 FileRW::FileRW()
